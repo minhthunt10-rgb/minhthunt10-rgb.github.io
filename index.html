@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Góc nhỏ học tiếng Anh cùng Ms. Minh Thư</title>
+<meta name="description" content="Giáo viên tiếng Anh tiểu học, cấp 2 và THPT. Lớp nhỏ, kèm nhóm 2–3 bạn và lớp online. IELTS 7.0, chứng chỉ TESOL quốc tế.">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --nen: #FFFEF4;
+    --nen-2: #FFF6E6;
+    --the: #FFFFFF;
+    --chu: #3A2E26;
+    --chu-nhat: #6B5C50;
+    --cam: #E26A2C;
+    --cam-dam: #B9531C;
+    --cam-nhat: #FFD7BA;
+    --vang: #FAD372;
+    --vang-nhat: #FFF1C9;
+    --xanh: #9ADB7C;
+    --xanh-dam: #4E8A2E;
+    --xanh-nhat: #E6F6DC;
+    --vien: #F1E4CF;
+    --bong: 0 6px 24px rgba(185, 83, 28, .10);
+    --bo: 22px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--nen);
+    color: var(--chu);
+    font-family: "Be Vietnam Pro", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: var(--cam-dam); }
+  .khung { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 18px; }
+  section { padding: 56px 0; }
+  h1, h2, h3 { line-height: 1.25; margin: 0 0 12px; }
+  h2 { font-size: clamp(26px, 6vw, 36px); font-weight: 800; color: var(--cam-dam); text-align: center; }
+  .phu-de { text-align: center; color: var(--chu-nhat); max-width: 620px; margin: 0 auto 32px; }
+  .nhan { display: inline-block; background: var(--xanh-nhat); color: var(--xanh-dam); font-weight: 600; font-size: 14px; padding: 4px 14px; border-radius: 99px; }
+
+  /* Nút */
+  .nut {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--cam); color: #fff; font-weight: 700; font-size: 17px;
+    padding: 14px 26px; border-radius: 99px; text-decoration: none; border: 0; cursor: pointer;
+    box-shadow: 0 6px 16px rgba(226, 106, 44, .35); transition: transform .15s;
+  }
+  .nut:hover { transform: translateY(-2px); }
+  .nut-vien { background: #fff; color: var(--cam-dam); border: 2px solid var(--cam); box-shadow: none; }
+
+  /* Thanh trên */
+  header.dau {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(255, 254, 244, .92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--vien);
+  }
+  header.dau .khung { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .thuong-hieu { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--chu); font-weight: 700; font-size: 15px; }
+  .thuong-hieu img { width: 44px; height: 44px; }
+  nav.menu { display: none; gap: 22px; }
+  nav.menu a { text-decoration: none; color: var(--chu); font-weight: 500; font-size: 15px; }
+  nav.menu a:hover { color: var(--cam-dam); }
+  .nut-nho { padding: 9px 18px; font-size: 15px; box-shadow: none; }
+
+  /* Đầu trang */
+  .hero { padding: 36px 0 48px; }
+  .hero .khung { display: grid; gap: 28px; align-items: center; }
+  .hero h1 { font-size: clamp(30px, 8vw, 50px); font-weight: 800; color: var(--chu); }
+  .hero h1 span { color: var(--cam); }
+  .hero .vai-tro { font-size: 19px; font-weight: 600; color: var(--xanh-dam); margin: 0 0 14px; }
+  .hero .loi { color: var(--chu-nhat); margin: 0 0 24px; }
+  .hero .nut-nhom { display: flex; flex-wrap: wrap; gap: 12px; }
+  .anh-hero { position: relative; max-width: 380px; margin: 0 auto; width: 100%; }
+  .anh-hero::before {
+    content: ""; position: absolute; inset: 12% 4% 0 4%;
+    background: var(--vang); border-radius: 48% 52% 44% 56% / 55% 45% 55% 45%;
+  }
+  .anh-hero img { position: relative; border-radius: 0 0 180px 180px; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top; }
+  .la { position: absolute; width: 46px; height: 28px; background: var(--xanh); border-radius: 0 100% 0 100%; }
+  .la-1 { top: 10%; right: 0; transform: rotate(-20deg); }
+  .la-2 { bottom: 12%; left: -4px; transform: rotate(160deg); }
+
+  /* Con số */
+  .so-lieu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .o-so { background: var(--the); border: 1px solid var(--vien); border-radius: var(--bo); padding: 22px 14px; text-align: center; box-shadow: var(--bong); }
+  .o-so b { display: block; font-size: clamp(24px, 6vw, 32px); font-weight: 800; color: var(--cam); line-height: 1.2; }
+  .o-so span { display: block; color: var(--chu-nhat); font-size: 15px; margin-top: 6px; }
+  .truong { margin-top: 28px; background: var(--xanh-nhat); border-radius: var(--bo); padding: 22px 18px; text-align: center; }
+  .truong h3 { font-size: 18px; color: var(--xanh-dam); }
+  .truong ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .truong li { background: #fff; border-radius: 99px; padding: 6px 16px; font-weight: 600; font-size: 15px; }
+
+  /* Học sinh tiến bộ */
+  .tien-bo { background: var(--nen-2); }
+  .the-list { display: grid; gap: 18px; }
+  .the { background: var(--the); border-radius: var(--bo); padding: 24px 22px; box-shadow: var(--bong); border-top: 6px solid var(--vang); }
+  .the .lop { font-weight: 600; color: var(--xanh-dam); font-size: 15px; }
+  .diem { display: flex; align-items: center; gap: 12px; margin: 10px 0 12px; flex-wrap: wrap; }
+  .diem .truoc { font-size: 30px; font-weight: 800; color: #A89A8E; }
+  .diem .mui { font-size: 26px; color: var(--cam); }
+  .diem .sau { font-size: 40px; font-weight: 800; color: var(--cam); }
+  .the p { margin: 0; color: var(--chu-nhat); font-size: 16px; }
+  .the .ket { margin-top: 10px; font-weight: 600; color: var(--chu); }
+
+  /* Feedback */
+  .feedback-luoi { columns: 2 160px; column-gap: 14px; }
+  .feedback-luoi button {
+    display: block; width: 100%; margin: 0 0 14px; padding: 0; border: 0; background: #fff;
+    border-radius: 16px; overflow: hidden; box-shadow: var(--bong); cursor: zoom-in; break-inside: avoid;
+  }
+  .feedback-luoi button.an { display: none; }
+  .feedback-luoi img { width: 100%; height: auto; }
+  .xem-them { text-align: center; margin-top: 10px; }
+  dialog.phong-to { border: 0; padding: 0; background: transparent; max-width: min(92vw, 640px); max-height: 92vh; }
+  dialog.phong-to::backdrop { background: rgba(40, 25, 15, .8); }
+  dialog.phong-to img { max-height: 86vh; width: auto; margin: 0 auto; border-radius: 12px; }
+  dialog.phong-to .dong { display: block; margin: 10px auto 0; }
+
+  /* Câu chuyện */
+  .chuyen .khung { display: grid; gap: 28px; align-items: center; }
+  .chuyen img { border-radius: var(--bo); box-shadow: var(--bong); }
+  .chuyen h2 { text-align: left; }
+  .chuyen p { margin: 0 0 14px; }
+  blockquote {
+    margin: 22px 0 0; padding: 18px 20px; background: var(--vang-nhat);
+    border-left: 6px solid var(--vang); border-radius: 0 16px 16px 0; font-weight: 600; font-size: 18px;
+  }
+
+  /* Cách dạy */
+  .cach-day { background: var(--nen-2); }
+  .ba-cot { display: grid; gap: 16px; }
+  .diem-manh { background: var(--the); border-radius: var(--bo); padding: 22px; box-shadow: var(--bong); }
+  .diem-manh .bieu-tuong { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; font-size: 26px; margin-bottom: 12px; }
+  .diem-manh h3 { font-size: 19px; }
+  .diem-manh p { margin: 0; color: var(--chu-nhat); font-size: 16px; }
+  .hai-cot { display: grid; gap: 16px; margin-top: 16px; }
+  .hop { background: var(--the); border-radius: var(--bo); padding: 22px; border: 1px solid var(--vien); }
+  .hop h3 { font-size: 18px; color: var(--xanh-dam); }
+  .hop ul { margin: 0; padding-left: 20px; }
+  .hop li { margin-bottom: 6px; }
+
+  /* Lịch lớp */
+  .chon-khoi { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 22px; }
+  .chon-khoi button {
+    font: inherit; font-weight: 600; font-size: 16px; padding: 8px 18px; border-radius: 99px; cursor: pointer;
+    border: 2px solid var(--vien); background: #fff; color: var(--chu);
+  }
+  .chon-khoi button[aria-pressed="true"] { background: var(--cam); border-color: var(--cam); color: #fff; }
+  .gio-ca { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 18px; font-size: 15px; }
+  .gio-ca span { padding: 4px 14px; border-radius: 99px; font-weight: 600; }
+  .ca1 { background: var(--vang-nhat); color: #8A6410; }
+  .ca2 { background: var(--xanh-nhat); color: var(--xanh-dam); }
+  .tuan { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+  .ngay { background: #fff; border: 1px solid var(--vien); border-radius: 14px; padding: 10px 4px; text-align: center; min-height: 110px; }
+  .ngay h4 { margin: 0 0 8px; font-size: 14px; color: var(--chu-nhat); font-weight: 600; }
+  .ngay .tag { display: block; border-radius: 10px; padding: 6px 2px; font-size: 12px; font-weight: 600; margin-bottom: 6px; line-height: 1.3; }
+  .ngay.nghi { background: transparent; border-style: dashed; }
+  .ngay.nghi::after { content: "Nghỉ"; color: #B9AEA3; font-size: 13px; }
+  .ghi-chu-lich { text-align: center; color: var(--chu-nhat); font-size: 15px; margin-top: 18px; }
+
+  /* Liên hệ */
+  .lien-he { background: var(--cam-nhat); }
+  .lien-he .khung { display: grid; gap: 24px; align-items: center; }
+  .the-qr { background: #fff; border-radius: 28px; padding: 26px 22px; text-align: center; box-shadow: var(--bong); max-width: 420px; margin: 0 auto; width: 100%; }
+  .the-qr h2 { font-size: 26px; }
+  .the-qr .qr { width: 240px; max-width: 100%; margin: 6px auto 16px; padding: 14px; background: #fff; border: 3px solid var(--vang); border-radius: 20px; }
+  .the-qr ol { text-align: left; margin: 18px 0 0; padding-left: 22px; font-size: 16px; color: var(--chu-nhat); }
+  .the-qr ol li { margin-bottom: 4px; }
+  .the-qr .ghi { font-size: 14px; color: var(--chu-nhat); margin-top: 10px; }
+  .anh-lien-he { max-width: 300px; margin: 0 auto; }
+  .anh-lien-he img { border-radius: 160px 160px var(--bo) var(--bo); }
+
+  footer { text-align: center; padding: 28px 18px 100px; color: var(--chu-nhat); font-size: 14px; }
+  footer img { width: 56px; margin: 0 auto 8px; }
+
+  /* Nút Zalo nổi trên điện thoại */
+  .zalo-noi {
+    position: fixed; right: 16px; bottom: 16px; z-index: 30;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #0068FF; color: #fff; font-weight: 700; text-decoration: none;
+    padding: 12px 20px; border-radius: 99px; box-shadow: 0 8px 20px rgba(0, 104, 255, .35);
+  }
+
+  @media (min-width: 720px) {
+    .so-lieu { grid-template-columns: repeat(4, 1fr); }
+    .the-list { grid-template-columns: repeat(3, 1fr); }
+    .ba-cot { grid-template-columns: repeat(3, 1fr); }
+    .hai-cot { grid-template-columns: repeat(3, 1fr); }
+    .feedback-luoi { columns: 3 220px; }
+  }
+  @media (min-width: 900px) {
+    section { padding: 80px 0; }
+    nav.menu { display: flex; }
+    .hero .khung { grid-template-columns: 1.15fr .85fr; }
+    .chuyen .khung { grid-template-columns: .9fr 1.1fr; }
+    .lien-he .khung { grid-template-columns: 1fr auto; justify-content: center; gap: 40px; }
+    .anh-lien-he { max-width: 320px; }
+    .zalo-noi { display: none; }
+    footer { padding-bottom: 28px; }
+  }
+  @media (max-width: 560px) {
+    /* Lịch: chuyển thành danh sách dọc cho dễ đọc */
+    .tuan { grid-template-columns: 1fr; gap: 8px; }
+    .ngay { display: flex; align-items: center; gap: 10px; min-height: 0; padding: 10px 14px; text-align: left; flex-wrap: wrap; }
+    .ngay h4 { margin: 0; width: 76px; font-size: 15px; }
+    .ngay .tag { display: inline-block; margin: 0; padding: 5px 12px; font-size: 14px; }
+    .ngay.nghi::after { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="dau">
+  <div class="khung">
+    <a class="thuong-hieu" href="#">
+      <img src="logo.png" alt="Logo Ms. Minh Thư – Grow with English">
+      <span>Ms. Minh Thư</span>
+    </a>
+    <nav class="menu" aria-label="Mục lục">
+      <a href="#tien-bo">Học sinh tiến bộ</a>
+      <a href="#cau-chuyen">Câu chuyện</a>
+      <a href="#cach-day">Cách mình dạy</a>
+      <a href="#lich">Lịch lớp</a>
+    </nav>
+    <a class="nut nut-nho" href="#lien-he">Học thử</a>
+  </div>
+</header>
+
+<main>
+  <!-- 1. Đầu trang -->
+  <section class="hero">
+    <div class="khung">
+      <div>
+        <span class="nhan">🌱 Grow with English</span>
+        <h1>Góc nhỏ học tiếng Anh cùng <span>Ms. Minh Thư</span></h1>
+        <p class="vai-tro">Giáo viên tiếng Anh – tiểu học, cấp 2 và THPT</p>
+        <p class="loi">Mình đồng hành cùng các bạn mất gốc, từng sợ tiếng Anh, giúp các bạn lấy lại nền tảng, tìm lại niềm yêu thích với môn học và tự tin đạt điểm cao. Lớp nhỏ, theo sát từng bạn – học ở trung tâm, kèm nhóm 2–3 bạn hoặc online.</p>
+        <div class="nut-nhom">
+          <a class="nut" href="#lien-he">Đăng ký học thử</a>
+          <a class="nut nut-vien" href="#lich">Xem lịch lớp</a>
+        </div>
+      </div>
+      <div class="anh-hero">
+        <img src="anh/chan-dung.jpg" alt="Ms. Minh Thư mỉm cười, khoanh tay" width="800" height="1200">
+        <i class="la la-1"></i><i class="la la-2"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Con số nổi bật -->
+  <section style="padding-top:0">
+    <div class="khung">
+      <div class="so-lieu">
+        <div class="o-so"><b>Gần 4 năm</b><span>đứng lớp tiếng Anh</span></div>
+        <div class="o-so"><b>TESOL</b><span>chứng chỉ quốc tế</span></div>
+        <div class="o-so"><b>IELTS 7.0</b><span>C1 level</span></div>
+        <div class="o-so"><b>8+</b><span>nhiều bạn đạt điểm tiếng Anh thi tốt nghiệp THPT</span></div>
+      </div>
+      <div class="truong">
+        <h3>🎓 Học sinh của mình đã đậu</h3>
+        <ul>
+          <li>ĐH Sài Gòn</li>
+          <li>ĐH Kinh tế</li>
+          <li>ĐH Công Thương</li>
+          <li>ĐH Ngoại ngữ – Tin học</li>
+          <li>ĐH Y Dược</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Học sinh tiến bộ -->
+  <section class="tien-bo" id="tien-bo">
+    <div class="khung">
+      <h2>Học sinh tiến bộ</h2>
+      <p class="phu-de">Mỗi bạn một điểm xuất phát. Điều mình quan tâm là các bạn đi xa được bao nhiêu.</p>
+      <div class="the-list">
+        <article class="the">
+          <div class="lop">Lớp 12 · Luyện thi tốt nghiệp THPT</div>
+          <div class="diem"><span class="truoc">5+</span><span class="mui">➜</span><span class="sau">8.4</span></div>
+          <p>Theo sát, báo bài, kiểm tra từ vựng, động viên và giúp em thấy rõ mục tiêu.</p>
+          <p class="ket">🎉 Đậu ĐH Sài Gòn đúng nguyện vọng</p>
+        </article>
+        <article class="the">
+          <div class="lop">Học sinh cấp 2</div>
+          <div class="diem"><span class="truoc">4–5</span><span class="mui">➜</span><span class="sau">9+</span></div>
+          <p>Tìm ra phần em còn yếu, học thêm từ vựng qua app, sửa kỹ bài tập, cho thêm bài ôn và động viên bằng sao, điểm thưởng.</p>
+          <p class="ket">🌟 Đạt 9+ môn tiếng Anh</p>
+        </article>
+        <article class="the">
+          <div class="lop">Lớp 8 · Từng rất sợ tiếng Anh</div>
+          <div class="diem"><span class="truoc">6–7</span><span class="mui">➜</span><span class="sau">9</span></div>
+          <p>Động viên là chính, làm từ bài dễ rồi khó dần, có thưởng mỗi khi em hoàn thành bài tập về nhà.</p>
+          <p class="ket">💪 9 điểm cuối kỳ 2</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Feedback -->
+  <section id="feedback">
+    <div class="khung">
+      <h2>Phụ huynh &amp; học sinh nói gì</h2>
+      <p class="phu-de">Những tin nhắn, bài kiểm tra và lá thư tay mình nhận được. Tên học sinh và tên trường đã được che để giữ riêng tư cho các bạn. Bấm vào ảnh để xem to.</p>
+      <div class="feedback-luoi" id="feedback-luoi"></div>
+      <div class="xem-them"><button class="nut nut-vien" id="nut-xem-them" type="button">Xem thêm feedback</button></div>
+    </div>
+  </section>
+  <dialog class="phong-to" id="phong-to">
+    <img src="" alt="">
+    <button class="nut nut-nho dong" type="button" id="dong-phong-to">Đóng</button>
+  </dialog>
+
+  <!-- 5. Câu chuyện -->
+  <section class="chuyen" id="cau-chuyen" style="background:var(--nen-2)">
+    <div class="khung">
+      <img src="anh/cau-chuyen.jpg" alt="Ms. Minh Thư ngồi bên bàn làm việc" width="800" height="533" loading="lazy">
+      <div>
+        <span class="nhan">Câu chuyện của mình</span>
+        <h2 style="margin-top:12px">Từng bị chê tiếng Anh kém, mình đã trở thành “chị giáo” như thế nào?</h2>
+        <p>Mình tốt nghiệp cử nhân loại giỏi Đại học Kinh tế TP.HCM (UEH) và đi làm văn phòng ba năm. Công việc bận rộn nhưng càng ngày mình càng thấy trống rỗng.</p>
+        <p>Mình bắt đầu dạy gia sư tiếng Anh như một việc làm thêm, để dành tiền mua điện thoại tặng mẹ. Rồi phụ huynh mời mình về trung tâm, mình đứng lớp nhiều hơn, tự tìm tòi và học thêm mỗi ngày. Buổi học chia tay lớp 12 năm ấy, đọc những lời các em viết, mình đã khóc rất nhiều – và hiểu thế nào là hạnh phúc nghề nghiệp.</p>
+        <p>Mình từng bị cười chê: “Tiếng Anh vậy cũng đòi đi dạy à?”. Nhưng mình không tự giới hạn bản thân. Giờ đây mình có IELTS 7.0, chứng chỉ TESOL quốc tế và đang học Thạc sĩ Ngôn ngữ Anh.</p>
+        <blockquote>“Không ai bắt đầu từ vị trí hoàn hảo. Nhưng ai cũng có quyền bắt đầu từ vị trí mình đang đứng và đi thật xa nếu đủ bền bỉ.”</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Cách mình dạy -->
+  <section id="cach-day">
+    <div class="khung">
+      <h2>Cách mình dạy</h2>
+      <p class="phu-de">Không chỉ dạy kiến thức, mình giúp các bạn biết cách học để tự tiến bộ.</p>
+      <div class="ba-cot">
+        <div class="diem-manh">
+          <div class="bieu-tuong" style="background:var(--vang-nhat)">💬</div>
+          <h3>Truyền đạt dễ hiểu</h3>
+          <p>Giảng chậm rãi, rõ ràng, đi từ cái dễ đến cái khó để bạn nào cũng theo kịp.</p>
+        </div>
+        <div class="diem-manh">
+          <div class="bieu-tuong" style="background:var(--xanh-nhat)">🧭</div>
+          <h3>Hướng dẫn cách học</h3>
+          <p>Chỉ cho các bạn cách làm từng dạng bài và cách học từ vựng, ngữ pháp sao cho hiệu quả.</p>
+        </div>
+        <div class="diem-manh">
+          <div class="bieu-tuong" style="background:var(--cam-nhat)">⭐</div>
+          <h3>Động viên mỗi ngày</h3>
+          <p>Khen đúng lúc, có sao và điểm thưởng, để các bạn thấy học tiếng Anh vui chứ không đáng sợ.</p>
+        </div>
+      </div>
+      <div class="hai-cot">
+        <div class="hop">
+          <h3>Hình thức học</h3>
+          <ul>
+            <li>Lớp nhỏ ở trung tâm, theo sát từng bạn</li>
+            <li>Kèm nhóm 2–3 bạn</li>
+            <li>Lớp online</li>
+          </ul>
+        </div>
+        <div class="hop">
+          <h3>Công cụ</h3>
+          <ul>
+            <li>Zoom, Google Meet cho lớp online</li>
+            <li>Quizlet để luyện từ vựng</li>
+          </ul>
+        </div>
+        <div class="hop">
+          <h3>Bằng cấp</h3>
+          <ul>
+            <li>IELTS 7.0 – C1 level</li>
+            <li>Chứng chỉ TESOL quốc tế</li>
+            <li>Đang học Thạc sĩ Ngôn ngữ Anh</li>
+            <li>Cử nhân loại giỏi UEH</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Lịch lớp -->
+  <section id="lich" style="background:var(--nen-2)">
+    <div class="khung">
+      <h2>Lịch lớp</h2>
+      <p class="phu-de">Chọn khối của con để xem các buổi học trong tuần.</p>
+      <div class="chon-khoi" id="chon-khoi" role="group" aria-label="Chọn khối"></div>
+      <div class="gio-ca"><span class="ca1">Ca 1: 18h00 – 19h30</span><span class="ca2">Ca 2: 19h30 – 21h00</span></div>
+      <div class="tuan" id="tuan" aria-live="polite"></div>
+      <p class="ghi-chu-lich">Nhắn Zalo cho mình để được tư vấn lớp phù hợp và sắp xếp buổi học thử nhé!</p>
+    </div>
+  </section>
+
+  <!-- 8. Liên hệ -->
+  <section class="lien-he" id="lien-he">
+    <div class="khung">
+      <div class="the-qr">
+        <h2>Đăng ký học thử</h2>
+        <p style="margin:0;color:var(--chu-nhat)">Quét mã để kết bạn Zalo với Ms. Minh Thư</p>
+        <img class="qr" src="anh/zalo-qr.png" alt="Mã QR Zalo của Ms. Minh Thư" width="600" height="603">
+        <a class="nut" href="anh/zalo-qr.png" download="ma-zalo-ms-minh-thu.png">⬇ Lưu mã QR</a>
+        <ol>
+          <li>Bấm <b>Lưu mã QR</b> để lưu ảnh vào máy.</li>
+          <li>Mở Zalo, bấm biểu tượng <b>quét mã QR</b>, chọn <b>ảnh vừa lưu</b> trong thư viện.</li>
+          <li>Bấm <b>Kết bạn</b> và nhắn cho mình nhé!</li>
+        </ol>
+        <p class="ghi">Đang xem trên máy tính? Chỉ cần mở Zalo trên điện thoại và quét thẳng mã trên màn hình.</p>
+      </div>
+      <div class="anh-lien-he">
+        <img src="anh/lien-he.jpg" alt="Ms. Minh Thư chỉ tay về phía mã QR" width="800" height="1201" loading="lazy">
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <img src="logo.png" alt="">
+  Grow with English · Tiếng Anh Ms. Minh Thư
+</footer>
+
+<a class="zalo-noi" href="#lien-he">💬 Nhắn Zalo</a>
+
+<script>
+  // ---- Feedback ----
+  const feedback = [
+    ["fb-06", "Phụ huynh khoe bảng điểm của con lớp 8, tiếng Anh 10"],
+    ["fb-02", "Phụ huynh cảm ơn khi con đạt chứng chỉ Flyers 15 khiên"],
+    ["fb-16", "Phụ huynh: Cô dạy rất dễ hiểu, bé hết sợ writing rồi"],
+    ["fb-11", "Thư tay của học sinh gửi cô trong buổi học cuối"],
+    ["fb-07", "Học sinh được cô giáo trên lớp giao quyền sửa bài cho lớp"],
+    ["fb-01", "Phụ huynh: Con thi tiếng Anh được 9 điểm"],
+    ["fb-14", "Phụ huynh: Nhờ em theo sát nên con mới tiến bộ hẳn"],
+    ["fb-05", "Bài kiểm tra giữa kỳ tiếng Anh lớp 8 đạt 9.8"],
+    ["fb-12", "Thư tay của học sinh: Mãi nhớ về cô"],
+    ["fb-15", "Phụ huynh: Con thích học cô, cô dạy dễ hiểu"],
+    ["fb-04", "Bài kiểm tra giữa kỳ tiếng Anh lớp 8 đạt 9.0"],
+    ["fb-18", "Học sinh khoe được điểm 10"],
+    ["fb-03", "Học sinh khoe điểm thi giữa kỳ 8.8 và điểm thường xuyên 10"],
+    ["fb-08", "Học sinh khoe điểm 9.6"],
+    ["fb-10", "Học sinh lớp 12 khoe bài kiểm tra 15 phút điểm 10"],
+    ["fb-13", "Phụ huynh gửi điểm thi tiếng Anh 9.5 của con"],
+    ["fb-09", "Phụ huynh báo bài kiểm tra của bé đạt 8.5"],
+    ["fb-17", "Phụ huynh học sinh lớp 4 cảm ơn cô giáo"]
+  ];
+  const HIEN_TRUOC = 6;
+  const luoi = document.getElementById("feedback-luoi");
+  const hop = document.getElementById("phong-to");
+  feedback.forEach(([ten, mo_ta], i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    if (i >= HIEN_TRUOC) b.classList.add("an");
+    b.innerHTML = `<img src="feedback/${ten}.jpg" alt="${mo_ta}" loading="lazy">`;
+    b.addEventListener("click", () => {
+      const img = hop.querySelector("img");
+      img.src = `feedback/${ten}.jpg`; img.alt = mo_ta;
+      hop.showModal();
+    });
+    luoi.appendChild(b);
+  });
+  const nutXemThem = document.getElementById("nut-xem-them");
+  nutXemThem.addEventListener("click", () => {
+    luoi.querySelectorAll(".an").forEach(b => b.classList.remove("an"));
+    nutXemThem.parentElement.remove();
+  });
+  document.getElementById("dong-phong-to").addEventListener("click", () => hop.close());
+  hop.addEventListener("click", e => { if (e.target === hop) hop.close(); });
+
+  // ---- Lịch lớp ----
+  const NGAY = ["Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật"];
+  // Số = vị trí ngày trong NGAY (0 = Thứ 2 … 6 = Chủ nhật)
+  const LICH = {
+    4:  { ca1: [1, 2, 4, 6], ca2: [] },
+    6:  { ca1: [], ca2: [0, 1, 3] },
+    7:  { ca1: [0, 2, 4, 6], ca2: [] },
+    8:  { ca1: [], ca2: [0, 2, 4] },
+    9:  { ca1: [1, 3, 6], ca2: [3] },
+    10: { ca1: [0, 3], ca2: [1] },
+    11: { ca1: [0], ca2: [2, 4, 6] },
+    12: { ca1: [2, 4, 6], ca2: [0, 4, 6] }
+  };
+  const chonKhoi = document.getElementById("chon-khoi");
+  const tuan = document.getElementById("tuan");
+  function veLich(khoi) {
+    chonKhoi.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.khoi == khoi));
+    const l = LICH[khoi];
+    tuan.innerHTML = NGAY.map((ten, i) => {
+      const the = [];
+      if (l.ca1.includes(i)) the.push('<span class="tag ca1">Ca 1 · 18h00</span>');
+      if (l.ca2.includes(i)) the.push('<span class="tag ca2">Ca 2 · 19h30</span>');
+      return `<div class="ngay${the.length ? "" : " nghi"}"><h4>${ten}</h4>${the.join("")}</div>`;
+    }).join("");
+  }
+  Object.keys(LICH).forEach(k => {
+    const b = document.createElement("button");
+    b.type = "button"; b.dataset.khoi = k; b.textContent = "Khối " + k;
+    b.addEventListener("click", () => veLich(k));
+    chonKhoi.appendChild(b);
+  });
+  veLich(12);
+</script>
+</body>
+</html>
