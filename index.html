@@ -70,7 +70,9 @@
   nav.menu { display: none; gap: 22px; }
   nav.menu a { text-decoration: none; color: var(--chu); font-weight: 500; font-size: 15px; }
   nav.menu a:hover { color: var(--cam-dam); }
-  .nut-nho { padding: 9px 18px; font-size: 15px; box-shadow: none; }
+  .nut-nho { padding: 9px 18px; font-size: 15px; box-shadow: none; white-space: nowrap; }
+  .nut-dau { display: flex; gap: 10px; }
+  .nut-xanh { background: var(--xanh-dam); display: none; }
 
   /* Đầu trang */
   .hero { padding: 36px 0 48px; }
@@ -206,6 +208,7 @@
   }
 
   @media (min-width: 720px) {
+    .nut-xanh { display: inline-flex; }
     .so-lieu { grid-template-columns: repeat(4, 1fr); }
     .the-list { grid-template-columns: repeat(3, 1fr); }
     .ba-cot { grid-template-columns: repeat(3, 1fr); }
@@ -214,13 +217,16 @@
   }
   @media (min-width: 900px) {
     section { padding: 80px 0; }
-    nav.menu { display: flex; }
     .hero .khung { grid-template-columns: 1.15fr .85fr; }
     .chuyen .khung { grid-template-columns: .9fr 1.1fr; }
     .lien-he .khung { grid-template-columns: 1fr auto; justify-content: center; gap: 40px; }
     .anh-lien-he { max-width: 320px; }
     .zalo-noi { display: none; }
     footer { padding-bottom: 28px; }
+  }
+  @media (min-width: 1180px) {
+    /* Menu chữ chỉ hiện khi đủ chỗ cho cả 2 nút bên phải */
+    nav.menu { display: flex; }
   }
   @media (max-width: 560px) {
     /* Lịch: chuyển thành danh sách dọc cho dễ đọc */
@@ -247,7 +253,10 @@
       <a href="#tai-lieu">Tài liệu</a>
       <a href="#lich">Lịch lớp</a>
     </nav>
-    <a class="nut nut-nho" href="#lien-he">Học thử miễn phí</a>
+    <div class="nut-dau">
+      <a class="nut nut-nho nut-xanh" href="#tai-lieu">Tài liệu miễn phí</a>
+      <a class="nut nut-nho" href="#lien-he">Học thử miễn phí</a>
+    </div>
   </div>
 </header>
 
