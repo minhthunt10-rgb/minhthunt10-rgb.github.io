@@ -184,7 +184,12 @@
   .ngay h4 { margin: 0 0 8px; font-size: 14px; color: var(--chu-nhat); font-weight: 600; }
   .ngay .tag { display: block; border-radius: 10px; padding: 6px 2px; font-size: 12px; font-weight: 600; margin-bottom: 6px; line-height: 1.3; }
   .ngay.nghi { background: transparent; border-style: dashed; }
-  .ngay.nghi::after { content: "Nghỉ"; color: #B9AEA3; font-size: 13px; }
+  .ngay.nghi::after { content: "Trống"; color: #B9AEA3; font-size: 13px; }
+  .ghi-chu-khoi {
+    max-width: 560px; margin: 18px auto 0; padding: 12px 18px; text-align: center;
+    background: var(--vang-nhat); border: 2px solid var(--vang); border-radius: 16px;
+    font-weight: 600; font-size: 16px;
+  }
   .ghi-chu-lich { text-align: center; color: var(--chu-nhat); font-size: 15px; margin-top: 18px; }
 
   /* Liên hệ */
@@ -457,6 +462,7 @@
       <div class="chon-khoi" id="chon-khoi" role="group" aria-label="Chọn khối"></div>
       <div class="gio-ca"><span class="ca1">Ca 1: 18h00 – 19h30</span><span class="ca2">Ca 2: 19h30 – 21h00</span></div>
       <div class="tuan" id="tuan" aria-live="polite"></div>
+      <p class="ghi-chu-khoi" id="ghi-chu-khoi" hidden></p>
       <p class="ghi-chu-lich">Nhắn Zalo cho mình để được tư vấn lớp phù hợp và sắp xếp buổi học thử miễn phí nhé!</p>
     </div>
   </section>
@@ -539,14 +545,14 @@
   const NGAY = ["Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7", "Chủ nhật"];
   // Số = vị trí ngày trong NGAY (0 = Thứ 2 … 6 = Chủ nhật)
   const LICH = {
-    4:  { ca1: [1, 2, 4, 6], ca2: [] },
+    4:  { ca1: [1, 4, 6], ca2: [] },
     6:  { ca1: [], ca2: [0, 1, 3] },
-    7:  { ca1: [0, 2, 4, 6], ca2: [] },
+    7:  { ca1: [0, 2, 4], ca2: [] },
     8:  { ca1: [], ca2: [0, 2, 4] },
-    9:  { ca1: [1, 3, 6], ca2: [3] },
+    9:  { ca1: [1, 3, 6], ca2: [] },
     10: { ca1: [0, 3], ca2: [1] },
-    11: { ca1: [0], ca2: [2, 4, 6] },
-    12: { ca1: [2, 4, 6], ca2: [0, 4, 6] }
+    11: { ca1: [], ca2: [2, 4, 6] },
+    12: { ca1: [2, 4, 6], ca2: [0, 4, 6], ghiChu: "Học sinh chọn 3 ca cố định dựa vào lịch có sẵn." }
   };
   const chonKhoi = document.getElementById("chon-khoi");
   const tuan = document.getElementById("tuan");
@@ -559,6 +565,9 @@
       if (l.ca2.includes(i)) the.push('<span class="tag ca2">Ca 2 · 19h30</span>');
       return `<div class="ngay${the.length ? "" : " nghi"}"><h4>${ten}</h4>${the.join("")}</div>`;
     }).join("");
+    const ghiChu = document.getElementById("ghi-chu-khoi");
+    ghiChu.textContent = l.ghiChu ? "📌 " + l.ghiChu : "";
+    ghiChu.hidden = !l.ghiChu;
   }
   Object.keys(LICH).forEach(k => {
     const b = document.createElement("button");
