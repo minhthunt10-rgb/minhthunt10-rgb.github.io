@@ -153,23 +153,6 @@
   .hop ul { margin: 0; padding-left: 20px; }
   .hop li { margin-bottom: 6px; }
 
-  /* Tài liệu miễn phí */
-  .tai-lieu { background: var(--xanh-nhat); }
-  .tieu-de-tai-lieu { text-align: center; }
-  .tieu-de-tai-lieu h2 { color: var(--xanh-dam); }
-  .bieu-tuong-lon { font-size: 44px; line-height: 1; margin-bottom: 10px; }
-  .nhom-tai-lieu { display: grid; gap: 18px; max-width: 520px; margin: 0 auto; }
-  @media (min-width: 1000px) { .nhom-tai-lieu { max-width: none; } }
-  .the-tai-lieu {
-    background: #fff; border-radius: 28px; padding: 26px 20px; box-shadow: var(--bong);
-    text-align: center; border: 3px dashed var(--xanh); display: flex; flex-direction: column; align-items: center;
-  }
-  .the-tai-lieu h3 { font-size: 21px; color: var(--chu); margin-bottom: 14px; }
-  .loai-tai-lieu { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
-  .loai-tai-lieu li { background: var(--vang-nhat); border-radius: 99px; padding: 5px 14px; font-weight: 600; font-size: 15px; }
-  .nut-zalo { background: #0068FF; box-shadow: 0 6px 16px rgba(0, 104, 255, .3); margin-top: auto; white-space: nowrap; }
-  .ghi-tai-lieu { text-align: center; color: var(--chu-nhat); font-size: 14px; margin: 22px auto 0; max-width: 560px; }
-
   /* Lịch lớp */
   .chon-khoi { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 22px; }
   .chon-khoi button {
@@ -234,11 +217,8 @@
     .zalo-noi { display: none; }
     footer { padding-bottom: 28px; }
   }
-  @media (min-width: 1000px) {
-    .nhom-tai-lieu { grid-template-columns: repeat(3, 1fr); }
-  }
   @media (min-width: 1180px) {
-    /* Menu chữ chỉ hiện khi đủ chỗ cho cả 2 nút bên phải */
+    /* Menu chữ chỉ hiện khi đủ chỗ cho nút bên phải */
     nav.menu { display: flex; }
   }
   @media (max-width: 560px) {
@@ -263,11 +243,9 @@
       <a href="#tien-bo">Học sinh tiến bộ</a>
       <a href="#cau-chuyen">Câu chuyện</a>
       <a href="#cach-day">Chia sẻ kiến thức</a>
-      <a href="#tai-lieu">Tài liệu</a>
       <a href="#lich">Lịch lớp</a>
     </nav>
     <div class="nut-dau">
-      <a class="nut nut-nho nut-xanh" href="#tai-lieu">Tài liệu miễn phí</a>
       <a class="nut nut-nho" href="#lien-he">Học thử miễn phí</a>
     </div>
   </div>
@@ -411,38 +389,6 @@
           </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- 7. Tài liệu miễn phí -->
-  <section class="tai-lieu" id="tai-lieu">
-    <div class="khung">
-      <div class="tieu-de-tai-lieu">
-        <div class="bieu-tuong-lon">📚</div>
-        <h2>Nhận tài liệu miễn phí</h2>
-        <p class="phu-de">Chọn nhóm Zalo phù hợp để nhận tài liệu tiếng Anh miễn phí do Ms. Minh Thư biên soạn.</p>
-      </div>
-      <div class="nhom-tai-lieu">
-        <div class="the-tai-lieu">
-          <div class="bieu-tuong-lon">📘</div>
-          <h3>Khối 9</h3>
-          <ul class="loai-tai-lieu"><li>Từ vựng</li><li>Ngữ pháp</li><li>Đề ôn tập</li></ul>
-          <a class="nut nut-zalo" href="https://zalo.me/g/kw8punlluxganvi08u8g" target="_blank" rel="noopener">💬 Vào nhóm Khối 9</a>
-        </div>
-        <div class="the-tai-lieu">
-          <div class="bieu-tuong-lon">📗</div>
-          <h3>Khối 12</h3>
-          <ul class="loai-tai-lieu"><li>Từ vựng</li><li>Ngữ pháp</li><li>Đề ôn tập</li></ul>
-          <a class="nut nut-zalo" href="https://zalo.me/g/9eoix1mrfxolyoalefod" target="_blank" rel="noopener">💬 Vào nhóm Khối 12</a>
-        </div>
-        <div class="the-tai-lieu">
-          <div class="bieu-tuong-lon">📙</div>
-          <h3>Luyện từ vựng + đọc hiểu B2, C1</h3>
-          <ul class="loai-tai-lieu"><li>Từ vựng</li><li>Đọc hiểu</li><li>B2 · C1</li></ul>
-          <a class="nut nut-zalo" href="https://zalo.me/g/3mwpgnwsfihgqvfg9z2y" target="_blank" rel="noopener">💬 Vào nhóm B2, C1</a>
-        </div>
-      </div>
-      <p class="ghi-tai-lieu">Trên điện thoại, bấm nút là Zalo tự mở nhóm. Trên máy tính, trang Zalo sẽ hiện mã QR để bạn quét bằng điện thoại.</p>
     </div>
   </section>
 
